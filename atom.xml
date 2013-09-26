@@ -4,7 +4,7 @@
   <title><![CDATA[暗夜に提灯、冬火鉢]]></title>
   <link href="http://hibachi.github.io/atom.xml" rel="self"/>
   <link href="http://hibachi.github.io/"/>
-  <updated>2013-09-26T17:53:03+09:00</updated>
+  <updated>2013-09-26T18:23:03+09:00</updated>
   <id>http://hibachi.github.io/</id>
   <author>
     <name><![CDATA[hibachi]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[他のPCに同じBlog環境を構成する]]></title>
+    <link href="http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc/"/>
+    <updated>2013-09-26T18:19:00+09:00</updated>
+    <id>http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc</id>
+    <content type="html"><![CDATA[<p>要は事前準備で行ったこととOctopressの設定に必要だったこと、さらにGitHub/Bitbucketのレポジトリを復元すれば良いはず。</p>
+
+<ol>
+<li><p>Homebrewのインストール</p>
+
+<pre><code> $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+</code></pre></li>
+<li><p>rbenvのインストール</p>
+
+<pre><code> $ brew install rbenv ruby-build
+</code></pre></li>
+<li><p>rbenvの環境設定</p>
+
+<pre><code> $ echo 'eval "$(rbenv init -)"' &gt;&gt; $HOME/.bashrc  
+ $ source $HOME/.bashrc
+</code></pre></li>
+<li><p>Ruby-1.9のインストール</p>
+
+<pre><code> $ rbenv install 1.9.3-p429
+ $ rbenv global 1.9.3-p429
+</code></pre></li>
+<li><p>BitBucketのレポジトリをクローンする</p>
+
+<pre><code> $ git clone git@bitbucket.org:username/username.github.io.git
+ $ cd username.github.io
+ $ git config user.name "username"
+ $ git config user.email "email@address"
+</code></pre></li>
+<li><p>必要なRubyパッケージをインストーする</p>
+
+<pre><code> $ cd username.github.io
+ $ gem install bundler
+ $ bundle install
+ $ rbenv rehash
+</code></pre></li>
+<li><p>GitHubのレポジトリをクローンする</p>
+
+<pre><code> $ cd username.github.io
+ $ git clone git@github.com:username/username.github.io.git _deploy
+ $ cd _deploy
+ $ git config user.name "username"
+ $ git config user.email "email@address"
+</code></pre></li>
+</ol>
+
+
+<p>これで必要なものは全てそろっているはず。とりあえずやってみるしかないね。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopressを構築する前にやったこと]]></title>
