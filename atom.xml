@@ -4,7 +4,7 @@
   <title><![CDATA[暗夜に提灯、冬火鉢]]></title>
   <link href="http://hibachi.github.io/atom.xml" rel="self"/>
   <link href="http://hibachi.github.io/"/>
-  <updated>2013-09-26T18:23:03+09:00</updated>
+  <updated>2013-09-26T18:37:21+09:00</updated>
   <id>http://hibachi.github.io/</id>
   <author>
     <name><![CDATA[hibachi]]></name>
@@ -16,9 +16,9 @@
   <entry>
     <title type="html"><![CDATA[他のPCに同じBlog環境を構成する]]></title>
     <link href="http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc/"/>
-    <updated>2013-09-26T18:19:00+09:00</updated>
+    <updated>2013-09-26T18:35:00+09:00</updated>
     <id>http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc</id>
-    <content type="html"><![CDATA[<p>要は事前準備で行ったこととOctopressの設定に必要だったこと、さらにGitHub/Bitbucketのレポジトリを復元すれば良いはず。</p>
+    <content type="html"><![CDATA[<p>要は事前準備で行ったこととOctopressの設定に必要だったこと、さらにGitHub/Bitbucketのレポジトリを復元すれば良いだろう。</p>
 
 <ol>
 <li><p>Homebrewのインストール</p>
