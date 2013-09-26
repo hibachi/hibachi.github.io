@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blog | 暗夜に提灯、冬火鉢]]></title>
+  <link href="http://hibachi.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://hibachi.github.io/"/>
+  <updated>2013-09-26T15:38:41+09:00</updated>
+  <id>http://hibachi.github.io/</id>
+  <author>
+    <name><![CDATA[hibachi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[新しいBlogを立ち上げる]]></title>
+    <link href="http://hibachi.github.io/blog/2013/09/26/setup-octopress/"/>
+    <updated>2013-09-26T15:29:00+09:00</updated>
+    <id>http://hibachi.github.io/blog/2013/09/26/setup-octopress</id>
+    <content type="html"><![CDATA[<p>GitHubにOctopressを使ったblogを立ち上げる手順を自分用にメモ書きする。</p>
+
+<h3>まずは下調べ</h3>
+
+<p>GitHub Pages + Octopressな環境を立ち上げた人は多い（というか、自分が遅すぎ？）ので、
+ググれば色々と情報が出てくる。自分が参考にしようと思ったのはこの辺り。</p>
+
+<ul>
+<li><a href="http://morizyun.github.io/blog/octopress-gitpage-minimum-install-guide/">OctopressでGitHub無料ブログ構築。sourceをBitbucket管理。簡単ガイド！</a></li>
+<li><a href="http://octopress.org/docs/deploying/github/">Deploying to Github Pages</a></li>
+<li><a href="http://tokkono.cute.coocan.jp/blog/slow/index.php/programming/github-pages-almost-perfect-guide/">GitHub Pagesホスティングサービス（ほぼ）完全活用ガイド</a></li>
+<li><a href="http://tantant.jp/blog/Octopress/installing-octopress/">Markdownで書いてGitで管理するブログ「Octopress」の始め方</a></li>
+</ul>
+
+
+<p>GitHubやRubyの環境からして整っていなかったので、自分なりに試行錯誤して時間がかかってしまった。
+結果的にはこれらに書いてあることを追従しただけのもので、大層な記事にはなっていない。</p>
+
+<h3>GitHubにレポジトリを作成する</h3>
+
+<p><em>Create a new repo</em> から <em>username</em>.github.io というレポジトリを作成する。</p>
+
+<h3>Octopressのソースを取得する</h3>
+
+<p>OctopressのGitレポジトリからソースコードを取得する</p>
+
+<p><code>
+git clone git@github.com:imathis/octopress.git username.github.io
+</code></p>
+
+<p>いつも使っているgitのアカウントとは違うアカウントを使用したい場合は、git-configで変更しておく。</p>
+
+<p><code>
+cd username.github.io
+git config user.name "username"
+git config user.email "email@address"
+</code></p>
+
+<h3>GitHubへデプロイする</h3>
+
+<p>Octopressはruby-1.9.2以降を必要とする。Mac OS X Mountain Lionのrubyは1.8系なので
+rbenvで1.9.3の環境を準備する</p>
+
+<ol>
+<li>Homebrewをインストールする</li>
+<li>rbenvをインストールする</li>
+<li>rbenvで1.9.3系のrubyをインストールする</li>
+<li>rbenvでバージョンをインストールした1.9.3に切り替える</li>
+</ol>
+
+
+<p>上記の準備ができたら、bundlerとGemfile内のgemをインストールする</p>
+
+<p><code>
+gem install bundler
+bundle install
+rbenv rehash
+rake install
+</code></p>
+
+<p>GitHubにPushするベースのレポジトリを作成する</p>
+
+<p>```
+rake setup_github_pages
+Enter the read/write url for your repository
+(For example, &lsquo;git@github.com:your_username/your_username.github.io.git)</p>
+
+<pre><code>       or 'https://github.com/your_username/your_username.github.io')
+</code></pre>
+
+<p>Repository url: git@github.com:username/username.github.io.git</p>
+
+<p>…</p>
+
+<h2>Now you can deploy to git@github.com:username/username.github.io.git with <code>rake deploy</code></h2>
+
+<p>```</p>
+
+<p>gitレポジトリである<code>_deploy</code>ディレクトリが作成される。ここがGitHub Pages用のレポジトリとなる。
+このとき、最初のコミットに、globalのAuthor/Emailの設定がコミットログに使われてしまう。Author/Emailを変更したい場合は、</p>
+
+<p><code>
+cd _deploy
+git commit --amend --author="username &lt;email@address&gt;"
+</code></p>
+
+<p>としておく。またこのレポジトリはまだGitHubにPushされていないので、Pushもしておく。</p>
+
+<p><code>
+git push -u origin master
+</code></p>
+
+<p>ここまでの手順で、Octopressの仮ページがGitHub上に作成されたことになる。</p>
+
+<h3>Octopressの初期設定</h3>
+
+<p>とりあえず、ブログのメイン設定ファイルである<code>_config.yml</code>を編集しておく。</p>
+
+<p><code>
+cd username.github.io
+vi _config.yml
+</code></p>
+
+<p>この段階でローカルレポジトリにCommitしておく。</p>
+
+<p><code>
+git add .
+git commit -m 'Initial commit for my blog'
+</code></p>
+
+<h3>Octopress管理用のレポジトリをBitbucketに作成する</h3>
+
+<p>フリーのGitHubアカウントでは、非公開のレポジトリを持てないのでOctopress自体の設定が入った全体の設定はGitHubに登録したくないものだ。先人の方々は非公開のレポジトリも持てるBitbucketで管理する方法をとられている。当然ここはのっかっておく。</p>
+
+<p>Bitbucketで新規に非公開レポジトリを作成した後、そのレポジトリをOctopress管理用のレポジトリに追加する。</p>
+
+<p><code>
+git remote add bitbucket git@bitbucket.org:username/username.github.io.git
+git push -u bitbucket source
+</code></p>
+
+<h3>Octopressのテーマを変更する</h3>
+
+<p>とりあえずシンプルなデザインのテーマを<a href="http://opthemes.com/">ここ</a>からとってくる。</p>
+
+<p>今回は、「whitespace」のテーマをインストールする。</p>
+
+<p><code>
+git clone git@github.com:lucaslew/whitespace.git .themes/whitespace
+bundle exec rake install['whitespace']
+</code></p>
+
+<p>プレビューは、</p>
+
+<p><code>
+bundle exec rake preview
+</code></p>
+
+<p>でできる。</p>
+
+<h3>記事を作成する</h3>
+
+<p>ひとまず簡単な記事を作成しておく。</p>
+
+<p>記事のベースとなるファイルを作成する。</p>
+
+<p><code>
+rake new_post['title']
+mkdir -p source/_posts
+Creating new post: source/_posts/2013-09-26-title.markdown
+</code></p>
+
+<p>ファイルの拡張子からも分かるように、Markdown形式で記事を作成する。</p>
+
+<h2>```</h2>
+
+<p>layout: post
+title: &ldquo;New blog&rdquo;
+date: 2013-09-26 14:36
+comments: true</p>
+
+<h2>categories: </h2>
+
+<p><a href="http://octopress.org/">Octopress</a>を使ってblogを立ち上げました。
+```</p>
+
+<p>記事を書いたら、公開前にプレビューする。</p>
+
+<p><code>
+rake generate
+rake preview
+</code></p>
+
+<p><code>http://localhost:4000/</code> からプレビューできる。</p>
+
+<p>プレビューして問題が無ければ、</p>
+
+<p><code>
+rake gen_deploy
+</code></p>
+
+<p>で公開する。</p>
+
+<p>ひとまず利用できるようになったので、細かい調整はそのうちやることにする。</p>
+]]></content>
+  </entry>
+  
+</feed>
