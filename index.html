@@ -9,7 +9,10 @@
   <meta name="author" content="hibachi">
 
   
-  <meta name="description" content="要は事前準備で行ったこととOctopressの設定に必要だったこと、さらにGitHub/Bitbucketのレポジトリを復元すれば良いだろう。 Homebrewのインストール $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/ &hellip;">
+  <meta name="description" content="フォントの生成は、公式サイトに書いてあるとおりを実行すれば良い。 fontforgeをインストールする $ brew install fontforge
+InconsolataフォントとMigu 1Mフォントを入手する
+Rictyの合成スクリプトを入手する
+2.でダウンロードしたフォント( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +80,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/29/ricty-font/">Rictyフォントをインストールする</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-29T15:04:00+09:00" pubdate data-updated="true">Sep 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>フォントの生成は、<a href="http://save.sys.t.u-tokyo.ac.jp/~yusa/fonts/ricty.html">公式サイト</a>に書いてあるとおりを実行すれば良い。</p>
+
+<ol>
+<li><p>fontforgeをインストールする</p>
+
+<p> $ brew install fontforge</p></li>
+<li><p><a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolataフォント</a>と<a href="http://mix-mplus-ipa.sourceforge.jp/migu/">Migu 1Mフォント</a>を入手する</p></li>
+<li><a href="https://github.com/yascentur/Ricty">Rictyの合成スクリプト</a>を入手する</li>
+<li>2.でダウンロードしたフォント(Inconsolata.otf migu-1m-*.ttf)を合成スクリプトと同じフォルダに入れる</li>
+<li><p>合成スクリプトを実行する</p>
+
+<p> $ ./ricty_generator.sh Inconsolata.otf migu-1m-regular.ttf migu-1m-bold.ttf</p></li>
+<li><p>生成されたフォント(Ricty-Bold.ttf, Ricty-Regular.ttf)をFont Book.appでインストールする</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -575,6 +628,10 @@ rbenvで1.9.3の環境を準備する</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/29/ricty-font/">Rictyフォントをインストールする</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/26/setup-blog-env-in-other-pc/">他のPCに同じBlog環境を構成する</a>

@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>他のPCに同じBlog環境を構成する - 暗夜に提灯、冬火鉢</title>
+  <title>Rictyフォントをインストールする - 暗夜に提灯、冬火鉢</title>
   <meta name="author" content="hibachi">
 
   
-  <meta name="description" content="要は事前準備で行ったこととOctopressの設定に必要だったこと、さらにGitHub/Bitbucketのレポジトリを復元すれば良いだろう。 Homebrewのインストール $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/ &hellip;">
+  <meta name="description" content="フォントの生成は、公式サイトに書いてあるとおりを実行すれば良い。 fontforgeをインストールする $ brew install fontforge
+InconsolataフォントとMigu 1Mフォントを入手する
+Rictyの合成スクリプトを入手する
+2.でダウンロードしたフォント( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc">
+  <link rel="canonical" href="http://hibachi.github.io/blog/2013/09/29/ricty-font">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="暗夜に提灯、冬火鉢" type="application/atom+xml">
@@ -80,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">他のPCに同じBlog環境を構成する</h1>
+      <h1 class="entry-title">Rictyフォントをインストールする</h1>
     
     
       <p class="meta">
@@ -96,60 +99,28 @@
   
 
 
-<time datetime="2013-09-26T18:35:00+09:00" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time>
+<time datetime="2013-09-29T15:04:00+09:00" pubdate data-updated="true">Sep 29<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>要は事前準備で行ったこととOctopressの設定に必要だったこと、さらにGitHub/Bitbucketのレポジトリを復元すれば良いだろう。</p>
+<div class="entry-content"><p>フォントの生成は、<a href="http://save.sys.t.u-tokyo.ac.jp/~yusa/fonts/ricty.html">公式サイト</a>に書いてあるとおりを実行すれば良い。</p>
 
 <ol>
-<li><p>Homebrewのインストール</p>
+<li><p>fontforgeをインストールする</p>
 
-<pre><code> $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-</code></pre></li>
-<li><p>rbenvのインストール</p>
+<p> $ brew install fontforge</p></li>
+<li><p><a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolataフォント</a>と<a href="http://mix-mplus-ipa.sourceforge.jp/migu/">Migu 1Mフォント</a>を入手する</p></li>
+<li><a href="https://github.com/yascentur/Ricty">Rictyの合成スクリプト</a>を入手する</li>
+<li>2.でダウンロードしたフォント(Inconsolata.otf migu-1m-*.ttf)を合成スクリプトと同じフォルダに入れる</li>
+<li><p>合成スクリプトを実行する</p>
 
-<pre><code> $ brew install rbenv ruby-build
-</code></pre></li>
-<li><p>rbenvの環境設定</p>
-
-<pre><code> $ echo 'eval "$(rbenv init -)"' &gt;&gt; $HOME/.bashrc  
- $ source $HOME/.bashrc
-</code></pre></li>
-<li><p>Ruby-1.9のインストール</p>
-
-<pre><code> $ rbenv install 1.9.3-p429
- $ rbenv global 1.9.3-p429
-</code></pre></li>
-<li><p>BitBucketのレポジトリをクローンする</p>
-
-<pre><code> $ git clone git@bitbucket.org:username/username.github.io.git
- $ cd username.github.io
- $ git config user.name "username"
- $ git config user.email "email@address"
-</code></pre></li>
-<li><p>必要なRubyパッケージをインストーする</p>
-
-<pre><code> $ cd username.github.io
- $ gem install bundler
- $ bundle install
- $ rbenv rehash
-</code></pre></li>
-<li><p>GitHubのレポジトリをクローンする</p>
-
-<pre><code> $ cd username.github.io
- $ git clone git@github.com:username/username.github.io.git _deploy
- $ cd _deploy
- $ git config user.name "username"
- $ git config user.email "email@address"
-</code></pre></li>
+<p> $ ./ricty_generator.sh Inconsolata.otf migu-1m-regular.ttf migu-1m-bold.ttf</p></li>
+<li><p>生成されたフォント(Ricty-Bold.ttf, Ricty-Regular.ttf)をFont Book.appでインストールする</p></li>
 </ol>
 
-
-<p>これで必要なものは全てそろっているはず。とりあえずやってみるしかないね。</p>
 </div>
 
 
@@ -172,7 +143,7 @@
   
 
 
-<time datetime="2013-09-26T18:35:00+09:00" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time>
+<time datetime="2013-09-29T15:04:00+09:00" pubdate data-updated="true">Sep 29<span>th</span>, 2013</time>
       
 
 
@@ -180,7 +151,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc/" data-via="" data-counturl="http://hibachi.github.io/blog/2013/09/26/setup-blog-env-in-other-pc/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hibachi.github.io/blog/2013/09/29/ricty-font/" data-via="" data-counturl="http://hibachi.github.io/blog/2013/09/29/ricty-font/" >Tweet</a>
   
   
   
@@ -189,10 +160,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/26/prep-works-for-setting-up-blog/" title="Previous Post: Octopressを構築する前にやったこと">&laquo; Octopressを構築する前にやったこと</a>
+        <a class="basic-alignment left" href="/blog/2013/09/26/setup-blog-env-in-other-pc/" title="Previous Post: 他のPCに同じBlog環境を構成する">&laquo; 他のPCに同じBlog環境を構成する</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/29/ricty-font/" title="Next Post: Rictyフォントをインストールする">Rictyフォントをインストールする &raquo;</a>
       
     </p>
   </footer>
