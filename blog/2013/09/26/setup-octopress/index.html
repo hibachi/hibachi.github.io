@@ -106,7 +106,7 @@
 
 <div class="entry-content"><p>GitHubにOctopressを使ったblogを立ち上げる手順を自分用にメモ書きする。</p>
 
-<h3>まずは下調べ</h3>
+<h2>まずは下調べ</h2>
 
 <p>GitHub Pages + Octopressな環境を立ち上げた人は多い（というか、自分が遅すぎ？）ので、
 ググれば色々と情報が出てくる。自分が参考にしようと思ったのはこの辺り。</p>
@@ -122,11 +122,11 @@
 <p>GitHubやRubyの環境からして整っていなかったので、自分なりに試行錯誤して時間がかかってしまった。
 結果的にはこれらに書いてあることを追従しただけのもので、大層な記事にはなっていない。</p>
 
-<h3>GitHubにレポジトリを作成する</h3>
+<h2>GitHubにレポジトリを作成する</h2>
 
 <p><em>Create a new repo</em> から <em>username</em>.github.io というレポジトリを作成する。</p>
 
-<h3>Octopressのソースを取得する</h3>
+<h2>Octopressのソースを取得する</h2>
 
 <p>OctopressのGitレポジトリからソースコードを取得する</p>
 
@@ -144,7 +144,7 @@
 </span><span class='line'>git config user.email "email@address"</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>GitHubへデプロイする</h3>
+<h2>GitHubへデプロイする</h2>
 
 <p>Octopressはruby-1.9.2以降を必要とする。Mac OS X Mountain Lionのrubyは1.8系なので
 rbenvで1.9.3の環境を準備する</p>
@@ -208,7 +208,7 @@ rbenvで1.9.3の環境を準備する</p>
 
 <p>ここまでの手順で、Octopressの仮ページがGitHub上に作成されたことになる。</p>
 
-<h3>Octopressの初期設定</h3>
+<h2>Octopressの初期設定</h2>
 
 <p>とりあえず、ブログのメイン設定ファイルである<code>_config.yml</code>を編集しておく。</p>
 
@@ -226,7 +226,7 @@ rbenvで1.9.3の環境を準備する</p>
 </span><span class='line'>git commit -m 'Initial commit for my blog'</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Octopress管理用のレポジトリをBitbucketに作成する</h3>
+<h2>Octopress管理用のレポジトリをBitbucketに作成する</h2>
 
 <p>フリーのGitHubアカウントでは、非公開のレポジトリを持てないのでOctopress自体の設定が入った全体の設定はGitHubに登録したくないものだ。先人の方々は非公開のレポジトリも持てるBitbucketで管理する方法をとられている。当然ここはのっかっておく。</p>
 
@@ -238,7 +238,7 @@ rbenvで1.9.3の環境を準備する</p>
 </span><span class='line'>git push -u bitbucket source</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Octopressのテーマを変更する</h3>
+<h2>Octopressのテーマを変更する</h2>
 
 <p>とりあえずシンプルなデザインのテーマを<a href="http://opthemes.com/">ここ</a>からとってくる。</p>
 
@@ -258,7 +258,7 @@ rbenvで1.9.3の環境を準備する</p>
 
 <p>でできる。</p>
 
-<h3>記事を作成する</h3>
+<h2>記事を作成する</h2>
 
 <p>ひとまず簡単な記事を作成しておく。</p>
 
@@ -375,6 +375,10 @@ rbenvで1.9.3の環境を準備する</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/29/apple-security/">Apple Product Security</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/29/ricty-font/">Rictyフォントをインストールする</a>
       </li>
     
@@ -388,10 +392,6 @@ rbenvで1.9.3の環境を準備する</p>
     
       <li class="post">
         <a href="/blog/2013/09/26/setup-octopress/">新しいBlogを立ち上げる</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/26/new-blog/">New blog</a>
       </li>
     
   </ul>

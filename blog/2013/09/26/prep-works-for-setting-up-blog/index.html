@@ -107,13 +107,45 @@
 <div class="entry-content"><p>Ruby on Macな環境にまったく馴染んでいなかったので、Octopressを構築する際にはかなり苦労した。
 基本的なことばかりなので、あまり役に立つ内容ではないだろうが、構築準備のメモとして記録しておく。</p>
 
-<h3>GitHubにSSH Keyを登録する</h3>
+<h2>GitHubにSSH Keyを登録する</h2>
 
 <p><em>Account Setting</em> => <em>SSH Keys</em> からSSH Keyを登録する。</p>
 
-<h3><a href="http://brew.sh/">Homebrew</a> をインストールする</h3>
+<h2>Command Line Tools for Xcodeをインストールする</h2>
 
-<h4>基本</h4>
+<p>Homebrewの要件は:</p>
+
+<ul>
+<li>AN Intel CPU</li>
+<li>OS X 10.5 or higher</li>
+<li>Command Line Tools for Xcode or Xcode</li>
+</ul>
+
+
+<p>なので、ディスク消費が少ないCommand Line Tools for Xcodeをインストールする。</p>
+
+<p>Command Line Toolsは、<a href="https://developer.apple.com/downloads/">Downloads for Apple Developers</a>からダウンロードできる。</p>
+
+<p>なお、本家Wikiの<a href="https://github.com/mxcl/homebrew/wiki/Installation">Requirements</a>には:</p>
+
+<ul>
+<li>X11を使ったアプリケーションを構築したい場合は、XQuartzが必要</li>
+<li>Javaバインディングするソフトウェア(Subverion, Barkeley-DB etc)を構築したい場合はJavaが必要</li>
+</ul>
+
+
+<p>とある。どちらも必要とはならないはずだが、今後必要となるかもしれないので、それぞれのリンクを残しておく。</p>
+
+<ul>
+<li><a href="http://xquartz.macosforge.org/landing/">XQuartz</a></li>
+<li><a href="http://support.apple.com/kb/HT5648">Java updates available for OS X on August 28, 2013</a></li>
+<li><a href="http://support.apple.com/kb/DL1572">Java for OS X 2013-004</a></li>
+</ul>
+
+
+<h2><a href="http://brew.sh/">Homebrew</a> をインストールする</h2>
+
+<h3>基本</h3>
 
 <ul>
 <li><code>/usr/local/</code>がベースのフォルダとなる。</li>
@@ -122,13 +154,13 @@
 </ul>
 
 
-<h4>インストール</h4>
+<h3>インストール</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>参考</h4>
+<h3>参考</h3>
 
 <ul>
 <li><a href="https://github.com/mxcl/homebrew/wiki">Homeberew Wiki</a></li>
@@ -138,15 +170,15 @@
 </ul>
 
 
-<h3><a href="https://github.com/sstephenson/rbenv">rbenv</a>をインストールする</h3>
+<h2><a href="https://github.com/sstephenson/rbenv">rbenv</a>をインストールする</h2>
 
-<h4>インストール</h4>
+<h3>インストール</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install rbenv ruby-build</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>基本操作</h4>
+<h3>基本操作</h3>
 
 <p>インストール可能なバージョンのリストを取得する</p>
 
@@ -186,7 +218,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ rbenv global 1.9.3-p429</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>参考</h4>
+<h3>参考</h3>
 
 <ul>
 <li><a href="http://qiita.com/sora_h/items/9dd797f42e7bea674705">OS X で rbenv を使って ruby 1.9.3 or 2.0.0 の環境を作る</a></li>
@@ -253,6 +285,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/29/apple-security/">Apple Product Security</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/29/ricty-font/">Rictyフォントをインストールする</a>
       </li>
     
@@ -266,10 +302,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/26/setup-octopress/">新しいBlogを立ち上げる</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/26/new-blog/">New blog</a>
       </li>
     
   </ul>

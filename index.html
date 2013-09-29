@@ -9,10 +9,8 @@
   <meta name="author" content="hibachi">
 
   
-  <meta name="description" content="フォントの生成は、公式サイトに書いてあるとおりを実行すれば良い。 fontforgeをインストールする $ brew install fontforge
-InconsolataフォントとMigu 1Mフォントを入手する
-Rictyの合成スクリプトを入手する
-2.でダウンロードしたフォント( &hellip;">
+  <meta name="description" content="Apple Product Security Apple security updates
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +84,44 @@ Rictyの合成スクリプトを入手する
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/09/29/apple-security/">Apple Product Security</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-29T16:10:00+09:00" pubdate data-updated="true">Sep 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://ssl.apple.com/support/security/">Apple Product Security</a></p>
+
+<p><a href="http://support.apple.com/kb/HT1222">Apple security updates</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/09/29/ricty-font/">Rictyフォントをインストールする</a></h1>
     
     
@@ -114,13 +150,15 @@ Rictyの合成スクリプトを入手する
 <ol>
 <li><p>fontforgeをインストールする</p>
 
-<p> $ brew install fontforge</p></li>
+<pre><code> $ brew install fontforge
+</code></pre></li>
 <li><p><a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolataフォント</a>と<a href="http://mix-mplus-ipa.sourceforge.jp/migu/">Migu 1Mフォント</a>を入手する</p></li>
 <li><a href="https://github.com/yascentur/Ricty">Rictyの合成スクリプト</a>を入手する</li>
 <li>2.でダウンロードしたフォント(Inconsolata.otf migu-1m-*.ttf)を合成スクリプトと同じフォルダに入れる</li>
 <li><p>合成スクリプトを実行する</p>
 
-<p> $ ./ricty_generator.sh Inconsolata.otf migu-1m-regular.ttf migu-1m-bold.ttf</p></li>
+<pre><code> $ ./ricty_generator.sh Inconsolata.otf migu-1m-regular.ttf migu-1m-bold.ttf
+</code></pre></li>
 <li><p>生成されたフォント(Ricty-Bold.ttf, Ricty-Regular.ttf)をFont Book.appでインストールする</p></li>
 </ol>
 
@@ -244,13 +282,45 @@ Rictyの合成スクリプトを入手する
   <div class="entry-content"><p>Ruby on Macな環境にまったく馴染んでいなかったので、Octopressを構築する際にはかなり苦労した。
 基本的なことばかりなので、あまり役に立つ内容ではないだろうが、構築準備のメモとして記録しておく。</p>
 
-<h3>GitHubにSSH Keyを登録する</h3>
+<h2>GitHubにSSH Keyを登録する</h2>
 
 <p><em>Account Setting</em> => <em>SSH Keys</em> からSSH Keyを登録する。</p>
 
-<h3><a href="http://brew.sh/">Homebrew</a> をインストールする</h3>
+<h2>Command Line Tools for Xcodeをインストールする</h2>
 
-<h4>基本</h4>
+<p>Homebrewの要件は:</p>
+
+<ul>
+<li>AN Intel CPU</li>
+<li>OS X 10.5 or higher</li>
+<li>Command Line Tools for Xcode or Xcode</li>
+</ul>
+
+
+<p>なので、ディスク消費が少ないCommand Line Tools for Xcodeをインストールする。</p>
+
+<p>Command Line Toolsは、<a href="https://developer.apple.com/downloads/">Downloads for Apple Developers</a>からダウンロードできる。</p>
+
+<p>なお、本家Wikiの<a href="https://github.com/mxcl/homebrew/wiki/Installation">Requirements</a>には:</p>
+
+<ul>
+<li>X11を使ったアプリケーションを構築したい場合は、XQuartzが必要</li>
+<li>Javaバインディングするソフトウェア(Subverion, Barkeley-DB etc)を構築したい場合はJavaが必要</li>
+</ul>
+
+
+<p>とある。どちらも必要とはならないはずだが、今後必要となるかもしれないので、それぞれのリンクを残しておく。</p>
+
+<ul>
+<li><a href="http://xquartz.macosforge.org/landing/">XQuartz</a></li>
+<li><a href="http://support.apple.com/kb/HT5648">Java updates available for OS X on August 28, 2013</a></li>
+<li><a href="http://support.apple.com/kb/DL1572">Java for OS X 2013-004</a></li>
+</ul>
+
+
+<h2><a href="http://brew.sh/">Homebrew</a> をインストールする</h2>
+
+<h3>基本</h3>
 
 <ul>
 <li><code>/usr/local/</code>がベースのフォルダとなる。</li>
@@ -259,13 +329,13 @@ Rictyの合成スクリプトを入手する
 </ul>
 
 
-<h4>インストール</h4>
+<h3>インストール</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>参考</h4>
+<h3>参考</h3>
 
 <ul>
 <li><a href="https://github.com/mxcl/homebrew/wiki">Homeberew Wiki</a></li>
@@ -275,15 +345,15 @@ Rictyの合成スクリプトを入手する
 </ul>
 
 
-<h3><a href="https://github.com/sstephenson/rbenv">rbenv</a>をインストールする</h3>
+<h2><a href="https://github.com/sstephenson/rbenv">rbenv</a>をインストールする</h2>
 
-<h4>インストール</h4>
+<h3>インストール</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install rbenv ruby-build</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>基本操作</h4>
+<h3>基本操作</h3>
 
 <p>インストール可能なバージョンのリストを取得する</p>
 
@@ -323,7 +393,7 @@ Rictyの合成スクリプトを入手する
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ rbenv global 1.9.3-p429</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>参考</h4>
+<h3>参考</h3>
 
 <ul>
 <li><a href="http://qiita.com/sora_h/items/9dd797f42e7bea674705">OS X で rbenv を使って ruby 1.9.3 or 2.0.0 の環境を作る</a></li>
@@ -369,7 +439,7 @@ Rictyの合成スクリプトを入手する
 
   <div class="entry-content"><p>GitHubにOctopressを使ったblogを立ち上げる手順を自分用にメモ書きする。</p>
 
-<h3>まずは下調べ</h3>
+<h2>まずは下調べ</h2>
 
 <p>GitHub Pages + Octopressな環境を立ち上げた人は多い（というか、自分が遅すぎ？）ので、
 ググれば色々と情報が出てくる。自分が参考にしようと思ったのはこの辺り。</p>
@@ -385,11 +455,11 @@ Rictyの合成スクリプトを入手する
 <p>GitHubやRubyの環境からして整っていなかったので、自分なりに試行錯誤して時間がかかってしまった。
 結果的にはこれらに書いてあることを追従しただけのもので、大層な記事にはなっていない。</p>
 
-<h3>GitHubにレポジトリを作成する</h3>
+<h2>GitHubにレポジトリを作成する</h2>
 
 <p><em>Create a new repo</em> から <em>username</em>.github.io というレポジトリを作成する。</p>
 
-<h3>Octopressのソースを取得する</h3>
+<h2>Octopressのソースを取得する</h2>
 
 <p>OctopressのGitレポジトリからソースコードを取得する</p>
 
@@ -407,7 +477,7 @@ Rictyの合成スクリプトを入手する
 </span><span class='line'>git config user.email "email@address"</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>GitHubへデプロイする</h3>
+<h2>GitHubへデプロイする</h2>
 
 <p>Octopressはruby-1.9.2以降を必要とする。Mac OS X Mountain Lionのrubyは1.8系なので
 rbenvで1.9.3の環境を準備する</p>
@@ -471,7 +541,7 @@ rbenvで1.9.3の環境を準備する</p>
 
 <p>ここまでの手順で、Octopressの仮ページがGitHub上に作成されたことになる。</p>
 
-<h3>Octopressの初期設定</h3>
+<h2>Octopressの初期設定</h2>
 
 <p>とりあえず、ブログのメイン設定ファイルである<code>_config.yml</code>を編集しておく。</p>
 
@@ -489,7 +559,7 @@ rbenvで1.9.3の環境を準備する</p>
 </span><span class='line'>git commit -m 'Initial commit for my blog'</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Octopress管理用のレポジトリをBitbucketに作成する</h3>
+<h2>Octopress管理用のレポジトリをBitbucketに作成する</h2>
 
 <p>フリーのGitHubアカウントでは、非公開のレポジトリを持てないのでOctopress自体の設定が入った全体の設定はGitHubに登録したくないものだ。先人の方々は非公開のレポジトリも持てるBitbucketで管理する方法をとられている。当然ここはのっかっておく。</p>
 
@@ -501,7 +571,7 @@ rbenvで1.9.3の環境を準備する</p>
 </span><span class='line'>git push -u bitbucket source</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Octopressのテーマを変更する</h3>
+<h2>Octopressのテーマを変更する</h2>
 
 <p>とりあえずシンプルなデザインのテーマを<a href="http://opthemes.com/">ここ</a>からとってくる。</p>
 
@@ -521,7 +591,7 @@ rbenvで1.9.3の環境を準備する</p>
 
 <p>でできる。</p>
 
-<h3>記事を作成する</h3>
+<h2>記事を作成する</h2>
 
 <p>ひとまず簡単な記事を作成しておく。</p>
 
@@ -630,6 +700,10 @@ rbenvで1.9.3の環境を準備する</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/29/apple-security/">Apple Product Security</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/29/ricty-font/">Rictyフォントをインストールする</a>
       </li>
     
@@ -643,10 +717,6 @@ rbenvで1.9.3の環境を準備する</p>
     
       <li class="post">
         <a href="/blog/2013/09/26/setup-octopress/">新しいBlogを立ち上げる</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/26/new-blog/">New blog</a>
       </li>
     
   </ul>

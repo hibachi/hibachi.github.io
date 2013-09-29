@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | 暗夜に提灯、冬火鉢]]></title>
   <link href="http://hibachi.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://hibachi.github.io/"/>
-  <updated>2013-09-29T15:05:07+09:00</updated>
+  <updated>2013-09-29T16:18:50+09:00</updated>
   <id>http://hibachi.github.io/</id>
   <author>
     <name><![CDATA[hibachi]]></name>
@@ -20,7 +20,7 @@
     <id>http://hibachi.github.io/blog/2013/09/26/setup-octopress</id>
     <content type="html"><![CDATA[<p>GitHubにOctopressを使ったblogを立ち上げる手順を自分用にメモ書きする。</p>
 
-<h3>まずは下調べ</h3>
+<h2>まずは下調べ</h2>
 
 <p>GitHub Pages + Octopressな環境を立ち上げた人は多い（というか、自分が遅すぎ？）ので、
 ググれば色々と情報が出てくる。自分が参考にしようと思ったのはこの辺り。</p>
@@ -36,11 +36,11 @@
 <p>GitHubやRubyの環境からして整っていなかったので、自分なりに試行錯誤して時間がかかってしまった。
 結果的にはこれらに書いてあることを追従しただけのもので、大層な記事にはなっていない。</p>
 
-<h3>GitHubにレポジトリを作成する</h3>
+<h2>GitHubにレポジトリを作成する</h2>
 
 <p><em>Create a new repo</em> から <em>username</em>.github.io というレポジトリを作成する。</p>
 
-<h3>Octopressのソースを取得する</h3>
+<h2>Octopressのソースを取得する</h2>
 
 <p>OctopressのGitレポジトリからソースコードを取得する</p>
 
@@ -56,7 +56,7 @@ git config user.name "username"
 git config user.email "email@address"
 </code></p>
 
-<h3>GitHubへデプロイする</h3>
+<h2>GitHubへデプロイする</h2>
 
 <p>Octopressはruby-1.9.2以降を必要とする。Mac OS X Mountain Lionのrubyは1.8系なので
 rbenvで1.9.3の環境を準備する</p>
@@ -112,7 +112,7 @@ git push -u origin master
 
 <p>ここまでの手順で、Octopressの仮ページがGitHub上に作成されたことになる。</p>
 
-<h3>Octopressの初期設定</h3>
+<h2>Octopressの初期設定</h2>
 
 <p>とりあえず、ブログのメイン設定ファイルである<code>_config.yml</code>を編集しておく。</p>
 
@@ -128,7 +128,7 @@ git add .
 git commit -m 'Initial commit for my blog'
 </code></p>
 
-<h3>Octopress管理用のレポジトリをBitbucketに作成する</h3>
+<h2>Octopress管理用のレポジトリをBitbucketに作成する</h2>
 
 <p>フリーのGitHubアカウントでは、非公開のレポジトリを持てないのでOctopress自体の設定が入った全体の設定はGitHubに登録したくないものだ。先人の方々は非公開のレポジトリも持てるBitbucketで管理する方法をとられている。当然ここはのっかっておく。</p>
 
@@ -139,7 +139,7 @@ git remote add bitbucket git@bitbucket.org:username/username.github.io.git
 git push -u bitbucket source
 </code></p>
 
-<h3>Octopressのテーマを変更する</h3>
+<h2>Octopressのテーマを変更する</h2>
 
 <p>とりあえずシンプルなデザインのテーマを<a href="http://opthemes.com/">ここ</a>からとってくる。</p>
 
@@ -158,7 +158,7 @@ bundle exec rake preview
 
 <p>でできる。</p>
 
-<h3>記事を作成する</h3>
+<h2>記事を作成する</h2>
 
 <p>ひとまず簡単な記事を作成しておく。</p>
 
