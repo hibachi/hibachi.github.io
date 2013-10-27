@@ -4,7 +4,7 @@
   <title><![CDATA[闇夜に提灯、冬火鉢]]></title>
   <link href="http://hibachi.github.io/atom.xml" rel="self"/>
   <link href="http://hibachi.github.io/"/>
-  <updated>2013-10-10T00:20:13+09:00</updated>
+  <updated>2013-10-27T18:09:06+09:00</updated>
   <id>http://hibachi.github.io/</id>
   <author>
     <name><![CDATA[hibachi]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ACLの解除]]></title>
+    <link href="http://hibachi.github.io/blog/2013/10/27/2013-10-27/"/>
+    <updated>2013-10-27T17:59:00+09:00</updated>
+    <id>http://hibachi.github.io/blog/2013/10/27/2013-10-27</id>
+    <content type="html"><![CDATA[<p>TimeMachineのバックアップからデータを手動でレストアした。
+その時に <code>cp -a</code> を使ってコピーしたので書き込み不可能なACLまで
+設定されてしまっていた。</p>
+
+<p>ACLの確認は、<code>ls -le</code> でできる。ACLをクリアするには、<code>chmod [-R] -N</code> を
+対象のファイル・フォルダに実行すれば良い。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Apple Product Security]]></title>

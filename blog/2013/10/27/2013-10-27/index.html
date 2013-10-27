@@ -5,12 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>New blog - 闇夜に提灯、冬火鉢</title>
+  <title>ACLの解除 - 闇夜に提灯、冬火鉢</title>
   <meta name="author" content="hibachi">
 
   
-  <meta name="description" content="Octopressを使ってblogを立ち上げました。
-">
+  <meta name="description" content="TimeMachineのバックアップからデータを手動でレストアした。
+その時に cp -a を使ってコピーしたので書き込み不可能なACLまで
+設定されてしまっていた。 ACLの確認は、ls -le でできる。ACLをクリアするには、chmod [-R] -N を
+対象のファイル・ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hibachi.github.io/blog/2013/09/26/new-blog">
+  <link rel="canonical" href="http://hibachi.github.io/blog/2013/10/27/2013-10-27">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="闇夜に提灯、冬火鉢" type="application/atom+xml">
@@ -81,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">New Blog</h1>
+      <h1 class="entry-title">ACLの解除</h1>
     
     
       <p class="meta">
@@ -97,14 +99,19 @@
   
 
 
-<time datetime="2013-09-26T14:36:00+09:00" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time>
+<time datetime="2013-10-27T17:59:00+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://octopress.org/">Octopress</a>を使ってblogを立ち上げました。</p>
+<div class="entry-content"><p>TimeMachineのバックアップからデータを手動でレストアした。
+その時に <code>cp -a</code> を使ってコピーしたので書き込み不可能なACLまで
+設定されてしまっていた。</p>
+
+<p>ACLの確認は、<code>ls -le</code> でできる。ACLをクリアするには、<code>chmod [-R] -N</code> を
+対象のファイル・フォルダに実行すれば良い。</p>
 </div>
 
 
@@ -127,7 +134,7 @@
   
 
 
-<time datetime="2013-09-26T14:36:00+09:00" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time>
+<time datetime="2013-10-27T17:59:00+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
       
 
 
@@ -135,7 +142,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hibachi.github.io/blog/2013/09/26/new-blog/" data-via="" data-counturl="http://hibachi.github.io/blog/2013/09/26/new-blog/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hibachi.github.io/blog/2013/10/27/2013-10-27/" data-via="" data-counturl="http://hibachi.github.io/blog/2013/10/27/2013-10-27/" >Tweet</a>
   
   
   
@@ -144,8 +151,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/09/29/apple-security/" title="Previous Post: Apple Product Security">&laquo; Apple Product Security</a>
       
-        <a class="basic-alignment right" href="/blog/2013/09/26/setup-octopress/" title="Next Post: 新しいBlogを立ち上げる">新しいBlogを立ち上げる &raquo;</a>
       
     </p>
   </footer>

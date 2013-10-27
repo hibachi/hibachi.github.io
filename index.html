@@ -9,8 +9,10 @@
   <meta name="author" content="hibachi">
 
   
-  <meta name="description" content="Apple Product Security Apple security updates
-">
+  <meta name="description" content="TimeMachineのバックアップからデータを手動でレストアした。
+その時に cp -a を使ってコピーしたので書き込み不可能なACLまで
+設定されてしまっていた。 ACLの確認は、ls -le でできる。ACLをクリアするには、chmod [-R] -N を
+対象のファイル・ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +80,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/27/2013-10-27/">ACLの解除</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-27T17:59:00+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>TimeMachineのバックアップからデータを手動でレストアした。
+その時に <code>cp -a</code> を使ってコピーしたので書き込み不可能なACLまで
+設定されてしまっていた。</p>
+
+<p>ACLの確認は、<code>ls -le</code> でできる。ACLをクリアするには、<code>chmod [-R] -N</code> を
+対象のファイル・フォルダに実行すれば良い。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -700,6 +743,10 @@ rbenvで1.9.3の環境を準備する</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/27/2013-10-27/">ACLの解除</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/29/apple-security/">Apple Product Security</a>
       </li>
     
@@ -713,10 +760,6 @@ rbenvで1.9.3の環境を準備する</p>
     
       <li class="post">
         <a href="/blog/2013/09/26/prep-works-for-setting-up-blog/">Octopressを構築する前にやったこと</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/26/setup-octopress/">新しいBlogを立ち上げる</a>
       </li>
     
   </ul>
